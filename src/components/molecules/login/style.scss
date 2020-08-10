@@ -1,0 +1,19 @@
+form {
+  margin-top: 25px;
+  p {
+    font-size: 13px !important;
+    color: #a770ff !important;
+    font-weight: 700;
+    margin-top: 12px !important;
+  }
+  div {
+    display: flex;
+  }
+  .password {
+    margin-top: 20px;
+  }
+  .ermsg {
+    color: red !important;
+    // display: block !important;
+  }
+}

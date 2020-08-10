@@ -1,0 +1,52 @@
+html {
+  scroll-behavior: smooth;
+  font-family: "Open Sans", sans-serif !important;
+}
+h1,
+h2,
+h3,
+h4 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+aside,
+ul,
+li,
+span,
+a,
+a:hover,
+p {
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none !important;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.Container {
+  width: 85%;
+  margin: auto;
+}
+
+.position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.score {
+  color: #ffffff;
+}
+
+.loading {
+  font-size: 72px;
+  background: -webkit-linear-gradient(#eee, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

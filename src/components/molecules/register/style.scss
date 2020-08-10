@@ -1,0 +1,27 @@
+.regContent {
+  padding: 60px;
+
+  .heading {
+    font-size: 1.8em;
+  }
+  .login {
+    float: right;
+    margin-top: -8px !important;
+    cursor: pointer;
+    i::before {
+      color: white;
+      font-size: 18px;
+    }
+    span {
+      padding: 8px 11px;
+      color: white;
+      background: #8b50f3;
+      border-radius: 50%;
+    }
+  }
+  p {
+    margin-top: 8px;
+    color: #aab5c4;
+    font-size: 14px;
+  }
+}

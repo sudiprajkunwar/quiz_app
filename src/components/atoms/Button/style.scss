@@ -1,0 +1,39 @@
+.button {
+  margin-top: 15px;
+  &--primary {
+    font-family: "Open Sans", sans-serif;
+    border: 2px solid #864be3;
+    border-radius: 4px;
+    padding: 5px 0;
+    width: 100%;
+    background-color: #a770ff;
+    height: 41px;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+    font-weight: 700;
+    color: white;
+
+    &:hover {
+      background-color: #ffffff;
+      color: #a770ff;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.green {
+  background-color: green;
+  &:hover {
+    background-color: green !important;
+  }
+}
+
+.red {
+  background-color: red;
+  &:hover {
+    background-color: red !important;
+  }
+}
