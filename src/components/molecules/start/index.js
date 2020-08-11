@@ -14,13 +14,16 @@ function Start() {
   if (back.isBack) {
     return <Redirect to="/" />;
   }
+
+  const admin = localStorage.getItem("admin");
   return (
     <>
       <div className="start">
         <button className="log" onClick={handleBackChange}>
           Logout
         </button>
-        <Heading title="Welcome Admin" />
+        {/* <Heading title="Welcome Admin" /> */}
+        <h2 className="heading">Welcome {admin}</h2>
         <h3 className="train">Train Your Brain</h3>
         <Link to="/welcome/quiz">
           <Button btnName="START the GAME" />

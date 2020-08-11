@@ -3,15 +3,27 @@ table {
   border-collapse: collapse;
   width: 100%;
 
+  counter-reset: serial-number; /* Set the serial number counter to 0 */
+
   td,
   th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
   }
+  th {
+    color: white;
+  }
 
   tr:nth-child(even) {
     background-color: #dddddd;
+  }
+
+  td {
+    &:first-child:before {
+      counter-increment: serial-number; /* Increment the serial number counter */
+      content: counter(serial-number);
+    }
   }
 }
 
@@ -26,4 +38,11 @@ table {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   color: white;
+  &:hover {
+    color: white;
+  }
+}
+
+ul {
+  display: flex;
 }

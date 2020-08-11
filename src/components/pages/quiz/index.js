@@ -38,10 +38,6 @@ function Quiz() {
       }
     }
 
-    // if (currentIndex >= questions.length) {
-    //   setEnd(true);
-    // }
-
     setShowAnswer(true);
   };
 

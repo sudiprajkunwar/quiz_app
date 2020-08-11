@@ -70,19 +70,59 @@ toast.configure();
 function RegForm() {
   const { handleSubmit, register, errors } = useForm();
 
-  // const [sucess, setSucess] = useState({ isClick: false });
-  const handleClick = () => {
-    // setSucess({
-    //   isClick: true,
-    // });
-    toast("sucessfully register", {
-      autoClose: 3000,
-    });
-  };
+  // const handleClick = () => {
+  //   //
+  //   // let myData = JSON.parse(localStorage.getItem("userData"), []);
+  //   let myData = localStorage.getItem("userData");
+
+  //   myData = JSON.parse(myData) || [];
+
+  //   // console.log(myData.name);
+
+  //   let regList = JSON.parse(localStorage.getItem("reglist")) || [];
+  //   console.log(regList);
+
+  //   const detail = {
+  //     name: myData.name,
+  //     password: myData.password,
+  //   };
+  //   console.log(detail);
+
+  //   regList.push(detail);
+
+  //   localStorage.setItem("reglist", JSON.stringify(regList));
+
+  //   //
+  // };
+
   const onSubmit = (data, e) => {
     console.log(data);
     e.target.reset();
     localStorage.setItem("userData", JSON.stringify(data));
+    toast("sucessfully register", {
+      autoClose: 3000,
+    });
+
+    //
+    // let myData = JSON.parse(localStorage.getItem("userData"), []);
+    let myData = localStorage.getItem("userData");
+
+    myData = JSON.parse(myData) || [];
+
+    // console.log(myData.name);
+
+    let regList = JSON.parse(localStorage.getItem("reglist")) || [];
+    console.log(regList);
+
+    const detail = {
+      name: myData.name,
+      password: myData.password,
+    };
+    console.log(detail);
+
+    regList.push(detail);
+
+    localStorage.setItem("reglist", JSON.stringify(regList));
   };
 
   return (
@@ -136,7 +176,11 @@ function RegForm() {
       )}
       {errors.password && <p className="ermsg">{errors.password.message}</p>}
 
-      <Button type="submit" btnName="Signup" onClick={handleClick} />
+      <Button
+        type="submit"
+        btnName="Signup"
+        // onClick={handleClick}
+      />
     </form>
   );
 }

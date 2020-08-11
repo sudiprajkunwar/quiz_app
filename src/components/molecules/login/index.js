@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 const Form = () => {
   const [values, setValues] = useState({ name: "", password: "" });
   const [login, setLogin] = useState(false);
-
   const loginHandleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -19,29 +18,55 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(values);
-    let myData = localStorage.getItem("userData");
+    // let myData = localStorage.getItem("userData");
 
-    myData = JSON.parse(myData) || [];
+    // myData = JSON.parse(myData) || [];
     // console.log(myData.name);
 
     // if (values.name === myData.name && values.password === myData.password) {
     //   localStorage.setItem("token", "asdfghjkl");
     //   console.log("helloe");
     //   setLogin(true);
+    //   toast("sucessfully login", {
+    //     autoClose: 3000,
+    //   });
+    // } else {
+    //   toast("please enter valid name and password", {
+    //     autoClose: 3000,
+    //   });
     // }
 
-    if (values.name === myData.name && values.password === myData.password) {
-      localStorage.setItem("token", "asdfghjkl");
-      console.log("helloe");
-      setLogin(true);
-      toast("sucessfully login", {
-        autoClose: 3000,
-      });
-    } else {
+    const regList = JSON.parse(localStorage.getItem("reglist")) || [];
+
+    regList.map((list) => {
+      if (values.name === list.name && values.password === list.password) {
+        localStorage.setItem("token", "asdfghjkl");
+        setLogin(true);
+        localStorage.setItem("admin", JSON.stringify(list.name));
+        toast("sucessfully login", {
+          autoClose: 3000,
+        });
+      }
+    });
+
+    values.name === "" &&
+      values.password === "" &&
       toast("please enter valid name and password", {
         autoClose: 3000,
       });
-    }
+
+    // (values.name != "" ||(values.name === "" && values.password != "") ||values.password === "") {
+    //   toast("please enter valid name and password", {
+    //     autoClose: 3000,
+    //   });
+    // }
+
+    //  toast("sucessfully login", {
+    //     autoClose: 3000,
+    //   })
+    // : toast("please enter valid name and password", {
+    //     autoClose: 3000,
+    //   });
   };
 
   const token = localStorage.getItem("token");
@@ -52,9 +77,6 @@ const Form = () => {
   }
 
   if (login || logIn) return <Redirect to="/welcome" />;
-
-  const highScore = JSON.parse(localStorage.getItem("highScore")) || [];
-  console.log(highScore);
 
   return (
     <form>

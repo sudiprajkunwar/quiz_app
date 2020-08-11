@@ -13,10 +13,7 @@ function QuestionList({
   return (
     <div className="quiz position">
       <div className="question">
-        <h2>
-          {/* <h2 dangerouslySetInnerHTML={{ _html: questions[0].question }} /> */}
-          {question}
-        </h2>
+        <h2 dangerouslySetInnerHTML={{ __html: question }} />
       </div>
       <div className="answer">
         {answers.map((answer, idx) => {
@@ -31,6 +28,7 @@ function QuestionList({
               color={`${bgColor}`}
               btnName={answer}
               onClick={() => handleAnswerClick(answer)}
+              dangerouslySetInnerHTML={{ __html: answer }}
             />
           );
         })}
