@@ -1,10 +1,10 @@
-tbody {
+table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
 
   td,
-  thead {
+  th {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
@@ -13,4 +13,17 @@ tbody {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+}
+
+// .button {
+//   &--primary {
+//     background-color: #07629a !important;
+//   }
+// }
+.leader {
+  background-color: #07629a !important;
+  border-color: white;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  color: white;
 }

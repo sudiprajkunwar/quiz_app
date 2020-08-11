@@ -12,7 +12,7 @@ function LeaderBoard() {
   //end
 
   // highscore
-  const highScore = JSON.parse(localStorage.getItem("highScore")) || [];
+  let highScore = JSON.parse(localStorage.getItem("highScores")) || [];
   console.log(highScore);
   // end
 
@@ -21,49 +21,37 @@ function LeaderBoard() {
     score: recentScore,
     name: myData.name,
   };
+
   highScore.push(score);
   highScore.sort((a, b) => b.score - a.score);
   highScore.splice(5);
-  console.log(highScore);
 
   localStorage.setItem("highScores", JSON.stringify(highScore));
+  console.log(highScore);
+  const board = highScore.map((score, idx) => {
+    console.log(score.score);
+    // });
+    return (
+      <>
+        <tr key={idx}>
+          <td>{score.name}</td>
+          <td>{score.score}</td>
+        </tr>
+      </>
+    );
+  });
 
+  const leader = "leader";
   return (
     <>
-      <Button
-        btnName="leaderboard"
-        //   onClick={handleBoard}
-      />
+      <Button btnName="leaderboard" color={leader} />
       <table>
         <tbody>
           <tr>
             <th>Name</th>
             <th>Score</th>
           </tr>
-          <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-          </tr>
-          <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-          </tr>
-          <tr>
-            <td>Ernst Handel</td>
-            <td>Roland Mendel</td>
-          </tr>
-          <tr>
-            <td>Island Trading</td>
-            <td>Helen Bennett</td>
-          </tr>
-          <tr>
-            <td>Laughing Bacchus Winecellars</td>
-            <td>Yoshi Tannamuri</td>
-          </tr>
-          <tr>
-            <td>Magazzini Alimentari Riuniti</td>
-            <td>Giovanni Rovelli</td>
-          </tr>
+          {board}
         </tbody>
       </table>{" "}
     </>

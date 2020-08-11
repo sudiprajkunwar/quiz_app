@@ -52,6 +52,10 @@ const Form = () => {
   }
 
   if (login || logIn) return <Redirect to="/welcome" />;
+
+  const highScore = JSON.parse(localStorage.getItem("highScore")) || [];
+  console.log(highScore);
+
   return (
     <form>
       <div className="username">
