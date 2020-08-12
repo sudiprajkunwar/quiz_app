@@ -8,4 +8,4 @@ after you begin the quiz and finish it at last you will the final score with lea
 
 
 
-<img scr="screensorts/Screenshot_2020-08-13 Quiz App.png">
+<img scr="https://github.com/sudiprajkunwar/quiz_app/blob/master/screensorts/Screenshot_2020-08-13%20Quiz%20App.png">
