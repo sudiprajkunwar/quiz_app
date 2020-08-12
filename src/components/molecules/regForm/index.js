@@ -134,15 +134,19 @@ function RegForm() {
           placeholder="Name"
           ref={register({
             required: true,
+            pattern: /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/,
           })}
         />
       </div>
       {errors.name && errors.name.type === "required" && (
         <p className="ermsg">Name is required field.</p>
       )}
+      {errors.name && errors.name.type === "pattern" && (
+        <p className="ermsg">Incorrect format</p>
+      )}
       <div className="email">
         <input
-          type="email"
+          type="text"
           name="email"
           placeholder="Email"
           ref={register({
